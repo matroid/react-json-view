@@ -114,7 +114,8 @@ export default class extends React.PureComponent {
             enableClipboard,
             src,
             namespace,
-            rowHovered
+            rowHovered,
+            customButtonProps
         } = this.props;
         return (
             <div
@@ -131,6 +132,13 @@ export default class extends React.PureComponent {
                     <CopyToClipboard
                         rowHovered={rowHovered}
                         clickCallback={enableClipboard}
+                        {...{ src, theme, namespace }}
+                    />
+                ) : null}
+                {customButtonProps ? (
+                    <CustomButton
+                        rowHovered={rowHovered}
+                        customButtonProps={customButtonProps}
                         {...{ src, theme, namespace }}
                     />
                 ) : null}

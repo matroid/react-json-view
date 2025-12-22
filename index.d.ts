@@ -141,6 +141,11 @@ export interface ReactJsonViewProps {
    * Default: null
    */
   defaultValue?: TypeDefaultValue | TypeDefaultValue[] | null;
+
+  customButtonProps?: {
+    icon: React.ReactNode;
+    onClick: (value: any) => void;
+  };
 }
 
 export interface OnCopyProps {
