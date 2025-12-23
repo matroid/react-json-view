@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomButton from './CustomButton';
 import dispatcher from './../helpers/dispatcher';
 
 import CopyToClipboard from './CopyToClipboard';

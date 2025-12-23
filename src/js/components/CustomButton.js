@@ -2,19 +2,17 @@ import React from 'react';
 
 import { toType } from './../helpers/util';
 
-
 //theme
 import Theme from './../themes/getStyle';
 
 export default class extends React.PureComponent {
     handleClick = () => {
-        const {customButtonProps, src} = this.props;
-        const {onClick} = customButtonProps;
+        const { customButtonProps, src } = this.props;
+        const { onClick } = customButtonProps;
         const valueFromSrc = this.clipboardValue(src);
 
         onClick(valueFromSrc);
-    }
-
+    };
 
     clipboardValue = value => {
         const type = toType(value);
@@ -32,7 +30,7 @@ export default class extends React.PureComponent {
         let style = Theme(theme, 'copy-to-clipboard').style;
         let display = 'inline';
 
-        const {icon} = customButtonProps;
+        const { icon } = customButtonProps;
 
         if (hidden) {
             display = 'none';
@@ -52,7 +50,10 @@ export default class extends React.PureComponent {
                         ...style,
                         display: display
                     }}
-                    onClick={this.handleCopy}
+                    onClick={e => {
+                        e.stopPropagation();
+                        this.handleClick();
+                    }}
                 >
                     {icon}
                 </span>

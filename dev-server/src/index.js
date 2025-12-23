@@ -9,6 +9,14 @@ import Moment from 'moment';
 //import the react-json-view component (installed with npm)
 import JsonViewer from './../../src/js/index';
 
+const forcedCustomButtonProps = {
+    icon: <div>Custom Icon</div>,
+    onClick: value => {
+        console.log('Custom button clicked');
+        console.log(value);
+    }
+};
+
 //render 2 different examples of the react-json-view component
 ReactDom.render(
     <div>
@@ -19,6 +27,7 @@ ReactDom.render(
             src={getExampleJson1()}
             quotesOnKeys={false}
             collapseStringsAfterLength={12}
+            customButtonProps={forcedCustomButtonProps}
             onEdit={e => {
                 console.log('edit callback', e);
                 if (e.new_value == 'error') {
