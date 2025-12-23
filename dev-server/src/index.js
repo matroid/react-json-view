@@ -14,7 +14,8 @@ const forcedCustomButtonProps = {
     onClick: keyAndValue => {
         const { value, namespace } = keyAndValue;
         console.log({ value, namespace });
-    }
+    },
+    title: 'Apply filter'
 };
 
 //render 2 different examples of the react-json-view component

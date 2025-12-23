@@ -30,7 +30,7 @@ export default class extends React.PureComponent {
         let style = Theme(theme, 'copy-to-clipboard').style;
         let display = 'inline';
 
-        const { icon } = customButtonProps;
+        const { icon, title } = customButtonProps;
 
         if (hidden) {
             display = 'none';
@@ -39,10 +39,10 @@ export default class extends React.PureComponent {
         return (
             <span
                 className="copy-to-clipboard-container"
-                title="Copy to clipboard"
+                title={title || 'Apply filter'}
                 style={{
                     verticalAlign: 'top',
-                    display: rowHovered ? 'inline-block' : 'none'
+                    display: 'inline-block'
                 }}
             >
                 <span

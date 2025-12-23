@@ -136,13 +136,6 @@ export default class extends React.PureComponent {
                         {...{ src, theme, namespace }}
                     />
                 ) : null}
-                {customButtonProps ? (
-                    <CustomButton
-                        rowHovered={rowHovered}
-                        customButtonProps={customButtonProps}
-                        {...{ src, theme, namespace }}
-                    />
-                ) : null}
                 {/* copy add/remove icons */}
                 {onAdd !== false ? this.getAddAttribute(rowHovered) : null}
                 {onDelete !== false ? this.getRemoveObject(rowHovered) : null}
