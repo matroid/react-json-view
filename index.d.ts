@@ -144,7 +144,10 @@ export interface ReactJsonViewProps {
 
   customButtonProps?: {
     icon: React.ReactNode;
-    onClick: (value: any) => void;
+    /**
+     * @param data value is the field value, namespace is a list of the entire fields. Suppose the field is "example.parent.sibling1", then namespace is ["example", "parent", "sibling1"]
+     */
+    onClick: (data: { value: any; namespace: Array<string | null> }) => void;
   };
 }
 

@@ -7,11 +7,11 @@ import Theme from './../themes/getStyle';
 
 export default class extends React.PureComponent {
     handleClick = () => {
-        const { customButtonProps, src } = this.props;
+        const { customButtonProps, src, namespace } = this.props;
         const { onClick } = customButtonProps;
         const valueFromSrc = this.clipboardValue(src);
 
-        onClick(valueFromSrc);
+        onClick({ value: valueFromSrc, namespace });
     };
 
     clipboardValue = value => {

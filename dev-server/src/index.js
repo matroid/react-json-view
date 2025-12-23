@@ -11,9 +11,9 @@ import JsonViewer from './../../src/js/index';
 
 const forcedCustomButtonProps = {
     icon: <div>Custom Icon</div>,
-    onClick: value => {
-        console.log('Custom button clicked');
-        console.log(value);
+    onClick: keyAndValue => {
+        const { value, namespace } = keyAndValue;
+        console.log({ value, namespace });
     }
 };
 
