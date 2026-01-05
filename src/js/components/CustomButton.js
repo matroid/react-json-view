@@ -26,14 +26,20 @@ export default class extends React.PureComponent {
     };
 
     render() {
-        const { theme, hidden, customButtonProps } = this.props;
+        const { theme, hidden, customButtonProps, rowHovered } = this.props;
         let style = Theme(theme, 'copy-to-clipboard').style;
         let display = 'inline';
 
-        const { icon, title } = customButtonProps;
+        const { icon, title, forceShow } = customButtonProps;
 
         if (hidden) {
             display = 'none';
+        }
+        let containerDisplay = 'inline-block';
+        if (forceShow) {
+            containerDisplay = 'inline-block';
+        } else if (!rowHovered) {
+            containerDisplay = 'none';
         }
 
         return (
@@ -42,7 +48,7 @@ export default class extends React.PureComponent {
                 title={title || 'Apply filter'}
                 style={{
                     verticalAlign: 'top',
-                    display: 'inline-block'
+                    display: containerDisplay
                 }}
             >
                 <span
