@@ -26,7 +26,7 @@ export default class extends React.PureComponent {
     };
 
     render() {
-        const { theme, hidden, rowHovered, customButtonProps } = this.props;
+        const { theme, hidden, customButtonProps } = this.props;
         let style = Theme(theme, 'copy-to-clipboard').style;
         let display = 'inline';
 
